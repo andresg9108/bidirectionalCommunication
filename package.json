@@ -1,0 +1,15 @@
+{
+  "name": "comunicaciones-bidireccionales",
+  "version": "0.0.1",
+  "description": "Comunicaciones Bidireccionales",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresg9108/comunicaciones-bidireccionales.git"
+  },
+  "author": "Andres Gonzalez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
