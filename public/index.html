@@ -11,7 +11,7 @@
   <script src="/socket.io/socket.io.js"></script>
   <script>
     $(function(){
-      var socket = io.connect('http://localhost:3000/');
+      var socket = io.connect('http://127.0.0.1:3000/');
       socket.on('broadcast', function(data){
         console.log(data.text);
       });
