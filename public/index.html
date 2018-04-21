@@ -10,10 +10,24 @@
   crossorigin="anonymous"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script>
-  	
+    $(function(){
+      var socket = io.connect('http://localhost:3000/');
+      socket.on('broadcast', function(data){
+        console.log(data.text);
+      });
+    });
+
+    function enviar(){
+      let mensaje = $("#mensaje").val();
+      socket.emit('message', { text : mensaje});
+      return false;
+    }
   </script>
 </head>
 <body>
-	<h1>Hola Mundo</h1>
+  <form method="post" onsubmit="return enviar()">
+    <textarea id="mensaje"></textarea>
+    <input type="submit" name="" />
+  </form>
 </body>
 </html>
