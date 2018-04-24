@@ -8,5 +8,15 @@
     "url": "git+https://github.com/andresg9108/comunicaciones-bidireccionales.git"
   },
   "author": "Andres Gonzalez",
-  "license": "ISC"
+  "license": "ISC",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "socket.io": "^2.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
 }

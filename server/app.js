@@ -3,10 +3,16 @@ var oApp = oExpress();
 var oServer = require('http').Server(oApp);
 var oIo = require('socket.io')(oServer);
 
-oApp.get('/', function(oReq, oRes){
-	oRes.status(200).send('Hola Mundo');
+oApp.get('/hola', function(oReq, oRes){
+	oRes.status(200).send('<h1>Hola Mundo</h1>');
 });
 
-oServer.listen(3000, function(){
-	console.log('Puerto: 3000');
+// Comenzando con Socket.io
+oIo.on('connection', function(socket){
+	console.log('Alguien se a conectado al Socket.');
+	console.log('Nodo IP: '+socket.handshake.address);
+});
+
+oServer.listen(3001, function(){
+	console.log('Puerto: 3001');
 });
