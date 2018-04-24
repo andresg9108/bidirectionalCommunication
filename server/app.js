@@ -1,9 +1,8 @@
 var oExpress = require('express');
 var oApp = oExpress();
+var oServer = require('http').Server(oApp);
+var oIo = require('socket.io')(oServer);
 
-//especificamos el subdirectorio donde se encuentran las páginas estáticas
-oApp.use(oExpress.static(__dirname + '/public'));
-
-oApp.listen(3000, function(){
-    console.log('Puerto: 3000');
+oServer.listen(3000, function(){
+	console.log('Puerto: 3000');
 });
