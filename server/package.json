@@ -1,7 +1,7 @@
 {
   "name": "comunicaciones-bidireccionales",
   "version": "0.0.1",
-  "description": "Comunicaciones Bidireccionales",
+  "description": "Comunicaciones Bidireccionales (Server)",
   "main": "app.js",
   "repository": {
     "type": "git",
