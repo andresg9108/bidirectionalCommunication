@@ -4,13 +4,16 @@
 	<meta charset="utf-8" />
 	<title>Hola Mundo</title>
 
-	<script
-  src="http://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  
+	<script src="lib/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="js/main.js"></script>
 </head>
 <body>
-	<h1>Hola Mundo</h1>
+	<input type="text" id="nickname" name="nickname" /><br />
+	<textarea id="txtmsj" name="txtmsj"></textarea>
+	<input type="button" value="Enviar" onclick="enviar()" />
+	<br />
+
+	<div id="statusmsj"></div>
 </body>
 </html>

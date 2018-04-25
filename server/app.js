@@ -8,9 +8,25 @@ oApp.get('/hola', function(oReq, oRes){
 });
 
 // Comenzando con Socket.io
+var msj = [
+	{
+		nickname: 'Bot',
+		text: 'Bienvenido.'
+	}
+]
+// Cuando se conecte un cliente.
 oIo.on('connection', function(socket){
 	console.log('Alguien se a conectado al Socket.');
 	console.log('Nodo IP: '+socket.handshake.address);
+
+	// Enviando al cliente
+	socket.emit('msj', msj);
+
+	socket.on('add-msj', function(data){
+		msj.push(data);
+
+		oIo.sockets.emit('msj', msj);
+	});
 });
 
 oServer.listen(3001, function(){

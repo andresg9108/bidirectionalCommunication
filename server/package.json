@@ -9,7 +9,7 @@
   },
   "author": "Andres Gonzalez",
   "license": "ISC",
-  "scripts":{
+  "scripts": {
     "start": "nodemon app.js"
   },
   "dependencies": {
