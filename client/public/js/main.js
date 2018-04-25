@@ -22,4 +22,6 @@ function enviar(){
 	console.log(msj);
 
 	socket.emit('add-msj', msj);
+
+	return false;
 }

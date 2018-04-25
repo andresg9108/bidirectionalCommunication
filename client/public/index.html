@@ -9,9 +9,11 @@
 	<script src="js/main.js"></script>
 </head>
 <body>
-	<input type="text" id="nickname" name="nickname" /><br />
-	<textarea id="txtmsj" name="txtmsj"></textarea>
-	<input type="button" value="Enviar" onclick="enviar()" />
+	<form onsubmit="return enviar()">
+		<input type="text" id="nickname" name="nickname" /><br />
+		<textarea id="txtmsj" name="txtmsj"></textarea>
+		<input type="submit" value="Enviar" />
+	</form>
 	<br />
 
 	<div id="statusmsj"></div>
