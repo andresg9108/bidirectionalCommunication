@@ -1,34 +1,33 @@
 var oExpress = require('express');
 var oApp = oExpress();
 var oServer = require('http').Server(oApp);
-var oIo = require('socket.io')(oServer);
+var oSocket = require('socket.io')(oServer);
+var iPort = 3001;
 
-oApp.get('/hola', function(oReq, oRes){
-	oRes.status(200).send('<h1>Hola Mundo</h1>');
+oApp.get('/hello', function(oReq, oRes){
+	oRes.status(200).send('<h1>Hello World</h1>');
 });
 
-// Comenzando con Socket.io
-var msj = [
+var aMessage = [
 	{
 		nickname: 'Bot',
-		text: 'Bienvenido.'
+		text: 'Welcome.'
 	}
 ]
-// Cuando se conecte un cliente.
-oIo.on('connection', function(socket){
-	console.log('Alguien se a conectado al Socket.');
-	console.log('Nodo IP: '+socket.handshake.address);
 
-	// Enviando al cliente
-	socket.emit('msj', msj);
+oSocket.on('connection', function(socket){
+	console.log('Someone has connected to the server.');
+	console.log('IP: '+socket.handshake.address);
 
-	socket.on('add-msj', function(data){
-		msj.push(data);
+	socket.emit('update-message', aMessage);
 
-		oIo.sockets.emit('msj', msj);
+	socket.on('add-message', function(oData){
+		aMessage.push(oData);
+
+		oSocket.sockets.emit('update-message', aMessage);
 	});
 });
 
-oServer.listen(3001, function(){
-	console.log('Puerto: 3001');
+oServer.listen(iPort, function(){
+	console.log('Port: '+iPort);
 });
