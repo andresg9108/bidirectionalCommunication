@@ -2,20 +2,21 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8" />
-	<title>Hola Mundo</title>
+	<title>Bidirectional Communication</title>
 
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="js/main.js"></script>
 </head>
 <body>
-	<form onsubmit="return enviar()">
-		<input type="text" id="nickname" name="nickname" /><br />
-		<textarea id="txtmsj" name="txtmsj"></textarea>
+	<form onsubmit="return send()">
+		<input type="hidden" id="nickname" name="nickname" value="User#" />
+		<textarea id="message" name="message"></textarea>
 		<input type="submit" value="Enviar" />
 	</form>
-	<br />
 
-	<div id="statusmsj"></div>
+	<br /><br />
+
+	<div id="messages"></div>
 </body>
 </html>

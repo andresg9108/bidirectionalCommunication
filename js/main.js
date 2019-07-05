@@ -2,26 +2,24 @@
 var socket = io.connect('http://localhost:3001', {'forceNew': true});
 
 $(function(){
-	// Cuando llegue el arreglo msj.
 	socket.on('update-message', function(data){
-		$("#statusmsj").html('');
+		$("#messages").html('');
 		$.each(data, function(i, v){
-			$("#statusmsj").append(v.nickname+': '+v.text+'<br />');
+			$("#messages").append(v.nickname+': '+v.text+'<br />');
 		});
 	});
 });
 
-function enviar(){
-	let N = $("#nickname").val();
-	let M = $("#txtmsj").val();
+function send(){
+	let sNickName = $("#nickname").val();
+	let sMessage = $("#message").val();
 
-	let msj = {
-		nickname: N,
-		text: M
+	let oMessage = {
+		nickname: sNickName,
+		text: sMessage
 	};
-	console.log(msj);
 
-	socket.emit('add-message', msj);
+	socket.emit('add-message', oMessage);
 
 	return false;
 }
