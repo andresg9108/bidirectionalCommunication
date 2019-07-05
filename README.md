@@ -1,5 +1,16 @@
-# comunicaciones-bidireccionales
+# Bidirectional Communication
 
-01) Hacer los siguientes procesos en cada una de las siguientes rutas, las cuales se encuentran en la raíz del proyecto: client y server.
-02) Ejecutar “npm install” para cargar las dependencias de node, en cada uno de estos directorios (client y server).
-03) Ejecutar “npm start” en cada uno de estos directorios (client y server).
+### Dependencies
+
+<ol>
+	<li>Node.js (https://nodejs.org)</li>
+</ol>
+
+### Starting:
+
+<ol>
+	<li>Clone the repository.</li>
+	<li>Execute "npm install nodemon -g", in the root of the project.</li>
+	<li>Execute "npm run server", in the root of the project.</li>
+	<li>In another terminal, execute "npm run client", in the root of the project.</li>
+</ol>

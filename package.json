@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "Practical example of management of bidirectional communications in NodesJs.",
   "scripts": {
-    "start": "nodemon app.js"
+    "server": "nodemon server.js",
+    "client": "nodemon client.js"
   },
   "repository": {
     "type": "git",
@@ -14,7 +15,7 @@
   "homepage": "https://github.com/andresg9108/bidirectionalCommunication",
   "dependencies": {
     "express": "^4.17.1",
-    "socket.io": "^2.2.0",
-    "nodemon": "^1.19.1"
+    "jquery": "^3.4.1",
+    "socket.io": "^2.2.0"
   }
 }
