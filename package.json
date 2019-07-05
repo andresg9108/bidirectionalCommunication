@@ -1,0 +1,20 @@
+{
+  "name": "bidirectionalCommunication",
+  "version": "0.1.0",
+  "description": "Practical example of management of bidirectional communications in NodesJs.",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andresg9108/bidirectionalCommunication"
+  },
+  "author": "Andres Gonzalez",
+  "license": "MIT",
+  "homepage": "https://github.com/andresg9108/bidirectionalCommunication",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0",
+    "nodemon": "^1.19.1"
+  }
+}
