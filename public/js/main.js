@@ -13,6 +13,7 @@ $(function(){
 function send(){
 	let sNickName = $("#nickname").val();
 	let sMessage = $("#message").val();
+	$("#message").val('');
 
 	let oMessage = {
 		nickname: sNickName,
