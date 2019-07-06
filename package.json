@@ -1,6 +1,6 @@
 {
   "name": "bidirectionalCommunication",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Practical example of management of bidirectional communications in NodesJs.",
   "scripts": {
     "server": "nodemon server.js",
