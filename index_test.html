@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<title>Bidirectional Communication</title>
+
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/socket.io-client/dist/socket.io.min.js"></script>
+	<!--<script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>-->
+</head>
+<body>
+	<form onsubmit="return send()">
+		<input type="hidden" id="nickname" name="nickname" value="User#" />
+		<textarea id="message" name="message"></textarea>
+		<input type="submit" value="Enviar" />
+	</form>
+
+	<br /><br />
+
+	<div id="messages"></div>
+
+<script>
+
+// Conectando
+var socket = io.connect('http://localhost:3001', {'forceNew': true});
+
+$(function(){
+	socket.on('update-message', function(data){
+		$("#messages").html('');
+		$.each(data, function(i, v){
+			$("#messages").append(v.nickname+': '+v.text+'<br />');
+		});
+	});
+});
+
+function send(){
+	let sNickName = $("#nickname").val();
+	let sMessage = $("#message").val();
+	$("#message").val('');
+
+	let oMessage = {
+		nickname: sNickName,
+		text: sMessage
+	};
+
+	socket.emit('add-message', oMessage);
+
+	return false;
+}
+
+</script>
+
+</body>
+</html>
