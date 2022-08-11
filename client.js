@@ -1,12 +1,15 @@
-var oExpress = require('express');
-var oApp = oExpress();
-var oServer = require('http').Server(oApp);
-var oSocket = require('socket.io')(oServer);
-var iPort = 3000;
+const express = require('express');
+const app = express();
+const http = require('http');
+const server = http.createServer(app);
+// const { Server } = require("socket.io");
+const io = require('socket.io')(server);
+// const io = new Server(server);
+const port = 3000;
 
-oApp.use(oExpress.static(__dirname + '/public'));
-oApp.use('/jquery', oExpress.static(__dirname + '/node_modules/jquery/dist/'));
+app.use(express.static(__dirname + '/public'));
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 
-oServer.listen(iPort, function(){
-	console.log('Port: '+iPort);
+server.listen(port, function(){
+	console.log('Port: '+port);
 });
